@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="src.PrestationListController">
+    <top>
+        <Button text="Retour menu" onAction="#handleRetourMenu" maxWidth="120" />
+    </top>
+    <center>
+        <VBox spacing="10" alignment="CENTER">
+            <Label text="Liste des prestations" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+            <TableView fx:id="prestationTable" prefWidth="700" prefHeight="300">
+                <columns>
+                    <TableColumn text="Type" fx:id="typeColumn" prefWidth="80"/>
+                    <TableColumn text="Date" fx:id="dateColumn" prefWidth="90"/>
+                    <TableColumn text="Client" fx:id="clientColumn" prefWidth="120"/>
+                    <TableColumn text="Entreprise" fx:id="entrepriseColumn" prefWidth="120"/>
+                    <TableColumn text="Description/Module" fx:id="descModuleColumn" prefWidth="180"/>
+                    <TableColumn text="TJM" fx:id="tjmColumn" prefWidth="60"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane> 

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="src.MainMenuController">
+    <center>
+        <VBox alignment="CENTER" spacing="15.0" BorderPane.alignment="CENTER">
+            <Label text="Menu Principal" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+            <Button text="Saisir une prestation" onAction="#handleSaisirPrestation" />
+            <Button text="Gérer les clients" onAction="#handleGererClients" />
+            <Button text="Generer une facture" onAction="#handleGenererFacture" />
+            <Button text="Generer un bilan" onAction="#handleGenererBilan" />
+            <Button text="Déconnexion" onAction="#handleDeconnexion" />
+            <Button text="Afficher les prestations" onAction="#handleAfficherPrestations" />
+        </VBox>
+    </center>
+    <padding><Insets top="30" right="30" bottom="30" left="30"/></padding>
+</BorderPane> 

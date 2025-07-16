@@ -1,0 +1,83 @@
+/* Style général */
+.root {
+    -fx-font-family: 'Segoe UI', 'Arial', sans-serif;
+    -fx-background-color: #f7f7fa;
+}
+
+/* Titres */
+.label.title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2a2a2a;
+    -fx-padding: 0 0 18 0;
+}
+
+/* Labels */
+.label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333;
+}
+
+/* Champs texte et ComboBox */
+.text-field, .combo-box, .date-picker {
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-background-color: #fff;
+    -fx-border-color: #bfc4cc;
+    -fx-border-width: 1;
+    -fx-padding: 5 8 5 8;
+    -fx-font-size: 14px;
+}
+
+/* Boutons */
+.button {
+    -fx-background-color: #4f8cff;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-padding: 7 18 7 18;
+    -fx-font-size: 15px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, #bfc4cc, 2, 0, 0, 1);
+    -fx-border-color: #3a6fd8;
+    -fx-border-width: 1;
+    -fx-border-style: solid;
+    -fx-transition: background-color 0.2s;
+}
+.button:hover {
+    -fx-background-color: #3566b8;
+}
+
+/* TableView */
+.table-view {
+    -fx-background-color: #fff;
+    -fx-border-color: #bfc4cc;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-table-cell-border-color: #e0e0e0;
+    -fx-padding: 8;
+}
+.table-view .column-header-background {
+    -fx-background-color: #eaf0fa;
+}
+.table-view .column-header, .table-view .filler {
+    -fx-size: 32px;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: transparent transparent #bfc4cc transparent;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+.table-row-cell:filled:selected, .table-row-cell:filled:selected .table-cell {
+    -fx-background-color: #dbeafe;
+}
+
+/* Espacement général */
+.grid-pane, .vbox, .hbox {
+    -fx-spacing: 12;
+}
+
+/* Dialogues */
+.dialog-pane {
+    -fx-background-color: #f7f7fa;
+} 

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<GridPane xmlns:fx="http://javafx.com/fxml" fx:controller="src.PrestationFormController" hgap="10" vgap="10" alignment="CENTER">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    <Button text="Retour menu" onAction="#handleRetourMenu" maxWidth="120" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+    <Label text="Type de prestation:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+    <ComboBox fx:id="typeCombo" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+    <Label text="Date:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <DatePicker fx:id="datePicker" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+    <!-- Champs spécifiques formation -->
+    <Label text="Heure début:" fx:id="labelHeureDebut" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+    <TextField fx:id="heureDebutField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+    <Label text="Heure fin:" fx:id="labelHeureFin" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+    <TextField fx:id="heureFinField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+    <Label text="Classe:" fx:id="labelClasse" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+    <TextField fx:id="classeField" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+    <Label text="Module:" fx:id="labelModule" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+    <TextField fx:id="moduleField" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+    <!-- Champs spécifiques consultation -->
+    <Label text="Description:" fx:id="labelDescription" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+    <TextField fx:id="descriptionField" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+    <Label text="TJM:" fx:id="labelTJM" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+    <TextField fx:id="tjmField" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+    <Label text="Tarif horaire:" fx:id="labelTarifHoraire" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+    <TextField fx:id="tarifHoraireField" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+    <Label text="Nombre de jours:" fx:id="labelNbJours" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+    <TextField fx:id="nbJoursField" GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+    <!-- Champs communs -->
+    <Label text="Entreprise:" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+    <TextField fx:id="entrepriseField" GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+    <Label text="Client:" GridPane.rowIndex="9" GridPane.columnIndex="0"/>
+    <TextField fx:id="clientField" GridPane.rowIndex="9" GridPane.columnIndex="1"/>
+    <Button text="Enregistrer" onAction="#handleEnregistrer" GridPane.rowIndex="10" GridPane.columnIndex="1"/>
+</GridPane> 
