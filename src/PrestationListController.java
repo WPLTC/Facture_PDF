@@ -52,8 +52,10 @@ public class PrestationListController {
         try {
             javafx.fxml.FXMLLoader loader = new javafx.fxml.FXMLLoader(getClass().getResource("MainMenu.fxml"));
             javafx.scene.Parent menuRoot = loader.load();
+            javafx.scene.Scene scene = new javafx.scene.Scene(menuRoot, 400, 350);
+            scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
             javafx.stage.Stage stage = (javafx.stage.Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new javafx.scene.Scene(menuRoot, 400, 350));
+            stage.setScene(scene);
             stage.setTitle("Menu Principal - Gestion de Factures");
         } catch (Exception ex) {
             Alert alert = new Alert(Alert.AlertType.ERROR);

@@ -10,8 +10,8 @@
             <Button text="Gérer les clients" onAction="#handleGererClients" />
             <Button text="Generer une facture" onAction="#handleGenererFacture" />
             <Button text="Generer un bilan" onAction="#handleGenererBilan" />
-            <Button text="Déconnexion" onAction="#handleDeconnexion" />
             <Button text="Afficher les prestations" onAction="#handleAfficherPrestations" />
+            <Button text="Déconnexion" onAction="#handleDeconnexion" />
         </VBox>
     </center>
     <padding><Insets top="30" right="30" bottom="30" left="30"/></padding>
