@@ -38,9 +38,11 @@ Facture_PDF/
    - Télécharge JavaFX SDK et JDBC PostgreSQL, place les .jar dans `lib/`
 2. **Configurer la base PostgreSQL**
    - Crée une base nommée `Facturation` (ou adapte le nom dans `db.properties`)
-   - Exécute le script SQL d'initialisation :
+   - Exécute les deux scripts SQL d'initialisation :
      ```sh
+     psql -U postgres -d Facturation -f sql/init.sql
      psql -U postgres -d Facturation -f sql/init_prestation_client.sql
+     
      ```
 3. **Configurer la connexion**
    - Modifie `db.properties` si besoin :
