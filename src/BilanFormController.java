@@ -89,6 +89,8 @@ public class BilanFormController {
             javafx.stage.Stage stage = (javafx.stage.Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.setTitle("Menu Principal - Gestion de Factures");
+            stage.setFullScreen(true);
+            stage.setFullScreenExitHint("");
         } catch (Exception ex) {
             showError("Erreur lors du retour au menu principal : " + ex.getMessage());
         }

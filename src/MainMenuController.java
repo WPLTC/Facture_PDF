@@ -15,6 +15,8 @@ public class MainMenuController {
             javafx.stage.Stage stage = (javafx.stage.Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.setTitle("Saisie de Prestation");
+            stage.setFullScreen(true);
+            stage.setFullScreenExitHint("");
         } catch (Exception ex) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Erreur");
@@ -34,6 +36,8 @@ public class MainMenuController {
             javafx.stage.Stage stage = (javafx.stage.Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.setTitle("Gestion des clients");
+            stage.setFullScreen(true);
+            stage.setFullScreenExitHint("");
         } catch (Exception ex) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Erreur");
@@ -53,6 +57,8 @@ public class MainMenuController {
             javafx.stage.Stage stage = (javafx.stage.Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.setTitle("Generer une facture");
+            stage.setFullScreen(true);
+            stage.setFullScreenExitHint("");
         } catch (Exception ex) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Erreur");
@@ -72,6 +78,8 @@ public class MainMenuController {
             javafx.stage.Stage stage = (javafx.stage.Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.setTitle("Generer un bilan");
+            stage.setFullScreen(true);
+            stage.setFullScreenExitHint("");
         } catch (Exception ex) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Erreur");
@@ -91,6 +99,7 @@ public class MainMenuController {
             javafx.stage.Stage stage = (javafx.stage.Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.setTitle("Connexion - Gestion de Factures");
+            stage.setFullScreen(true);
         } catch (Exception ex) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Erreur");
@@ -110,6 +119,8 @@ public class MainMenuController {
             javafx.stage.Stage stage = (javafx.stage.Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.setTitle("Liste des prestations");
+            stage.setFullScreen(true);
+            stage.setFullScreenExitHint("");
         } catch (Exception ex) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Erreur");

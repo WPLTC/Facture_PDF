@@ -14,6 +14,7 @@ public class Main extends Application {
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         primaryStage.setTitle("Connexion - Gestion de Factures");
         primaryStage.setScene(scene);
+        primaryStage.setFullScreen(true); // Ouvre en plein écran
         primaryStage.show();
     }
 

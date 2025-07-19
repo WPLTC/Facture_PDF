@@ -21,16 +21,20 @@
     <!-- Champs spécifiques consultation -->
     <Label text="Description:" fx:id="labelDescription" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
     <TextField fx:id="descriptionField" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
     <Label text="TJM:" fx:id="labelTJM" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
     <TextField fx:id="tjmField" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
-    <Label text="Tarif horaire:" fx:id="labelTarifHoraire" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
-    <TextField fx:id="tarifHoraireField" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
-    <Label text="Nombre de jours:" fx:id="labelNbJours" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
-    <TextField fx:id="nbJoursField" GridPane.rowIndex="8" GridPane.columnIndex="1"/>
-    <!-- Champs communs -->
-    <Label text="Entreprise:" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
-    <TextField fx:id="entrepriseField" GridPane.rowIndex="8" GridPane.columnIndex="1"/>
-    <Label text="Client:" GridPane.rowIndex="9" GridPane.columnIndex="0"/>
-    <TextField fx:id="clientField" GridPane.rowIndex="9" GridPane.columnIndex="1"/>
-    <Button text="Enregistrer" onAction="#handleEnregistrer" GridPane.rowIndex="10" GridPane.columnIndex="1"/>
+
+    <Label text="Tarif horaire:" fx:id="labelTarifHoraire" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+    <TextField fx:id="tarifHoraireField" GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+
+    <Label text="Nombre de jours:" fx:id="labelNbJours" GridPane.rowIndex="9" GridPane.columnIndex="0"/>
+    <TextField fx:id="nbJoursField" GridPane.rowIndex="9" GridPane.columnIndex="1"/>
+
+    <Label text="Entreprise:" GridPane.rowIndex="10" GridPane.columnIndex="0"/>
+    <ComboBox fx:id="entrepriseCombo" GridPane.rowIndex="10" GridPane.columnIndex="1"/>
+
+    <Label text="Client:" GridPane.rowIndex="11" GridPane.columnIndex="0"/>
+    <ComboBox fx:id="clientCombo" GridPane.rowIndex="11" GridPane.columnIndex="1"/>
+    <Button text="Enregistrer" onAction="#handleEnregistrer" GridPane.rowIndex="12" GridPane.columnIndex="1"/>
 </GridPane> 

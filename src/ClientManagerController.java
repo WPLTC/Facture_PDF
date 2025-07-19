@@ -84,6 +84,8 @@ public class ClientManagerController {
             javafx.stage.Stage stage = (javafx.stage.Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.setTitle("Menu Principal - Gestion de Factures");
+            stage.setFullScreen(true);
+            stage.setFullScreenExitHint("");
         } catch (Exception ex) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Erreur");

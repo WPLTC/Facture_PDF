@@ -8,6 +8,7 @@ import javafx.scene.control.TextField;
 import java.sql.*;
 import java.util.Properties;
 import java.io.FileInputStream;
+import javafx.scene.Scene;
 
 public class LoginController {
     @FXML private TextField loginField;
@@ -37,8 +38,12 @@ public class LoginController {
                     javafx.fxml.FXMLLoader loader = new javafx.fxml.FXMLLoader(getClass().getResource("MainMenu.fxml"));
                     javafx.scene.Parent menuRoot = loader.load();
                     javafx.stage.Stage stage = (javafx.stage.Stage) loginField.getScene().getWindow();
-                    stage.setScene(new javafx.scene.Scene(menuRoot, 400, 350));
+                    Scene menuScene = new javafx.scene.Scene(menuRoot, 400, 350);
+                    menuScene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+                    stage.setScene(menuScene);
                     stage.setTitle("Menu Principal - Gestion de Factures");
+                    stage.setFullScreen(true);
+                    stage.setFullScreenExitHint("");
                 } catch (Exception ex) {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Erreur");

@@ -25,12 +25,61 @@ public class PrestationFormController {
     @FXML private Label labelTJM;
     @FXML private Label labelTarifHoraire;
     @FXML private Label labelNbJours;
+    @FXML private ComboBox<Client> clientCombo;
+    @FXML private ComboBox<String> entrepriseCombo;
 
     @FXML
     public void initialize() {
         typeCombo.getItems().addAll("formation", "consultation");
         typeCombo.setOnAction(e -> updateFields());
         updateFields();
+
+        // Ajout du TextFormatter pour heureDebutField
+        heureDebutField.setPromptText("hh:mm");
+        heureDebutField.setTextFormatter(new TextFormatter<>(change -> {
+            String newText = change.getControlNewText();
+            // Si on tape 2 chiffres sans :, on insère automatiquement le :
+            if (newText.length() == 2 && !newText.contains(":") && change.isAdded()) {
+                change.setText(change.getText() + ":");
+                return change;
+            }
+            // Autorise uniquement le format hh:mm ou moins
+            if (newText.matches("^\\d{0,2}:?\\d{0,2}$")) {
+                return change;
+            }
+            return null;
+        }));
+
+        // Ajout du TextFormatter pour heureFinField
+        heureFinField.setPromptText("hh:mm");
+        heureFinField.setTextFormatter(new TextFormatter<>(change -> {
+            String newText = change.getControlNewText();
+            if (newText.length() == 2 && !newText.contains(":") && change.isAdded()) {
+                change.setText(change.getText() + ":");
+                return change;
+            }
+            if (newText.matches("^\\d{0,2}:?\\d{0,2}$")) {
+                return change;
+            }
+            return null;
+        }));
+
+        // Remplissage des ComboBox client et entreprise
+        try {
+            java.util.List<Client> clients = new ClientDAO().getAllClients();
+            clientCombo.setItems(javafx.collections.FXCollections.observableArrayList(clients));
+            java.util.Set<String> entreprises = clients.stream()
+                .map(Client::getEntreprise)
+                .filter(e -> e != null && !e.isEmpty())
+                .collect(java.util.stream.Collectors.toCollection(java.util.TreeSet::new));
+            entrepriseCombo.setItems(javafx.collections.FXCollections.observableArrayList(entreprises));
+        } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erreur");
+            alert.setHeaderText(null);
+            alert.setContentText("Erreur lors du chargement des clients/entreprises : " + e.getMessage());
+            alert.showAndWait();
+        }
     }
 
     private void updateFields() {
@@ -69,12 +118,18 @@ public class PrestationFormController {
             java.math.BigDecimal tjm = tjmField.isVisible() && !tjmField.getText().isEmpty() ? new java.math.BigDecimal(tjmField.getText()) : null;
             java.math.BigDecimal tarifHoraire = tarifHoraireField.isVisible() && !tarifHoraireField.getText().isEmpty() ? new java.math.BigDecimal(tarifHoraireField.getText()) : null;
             Integer nbJours = nbJoursField.isVisible() && !nbJoursField.getText().isEmpty() ? Integer.parseInt(nbJoursField.getText()) : null;
-            String entreprise = entrepriseField.getText();
-            String client = clientField.getText();
-
+            String entreprise = entrepriseCombo.getValue();
+            Client client = clientCombo.getValue();
+            if (client == null || entreprise == null) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Erreur");
+                alert.setHeaderText(null);
+                alert.setContentText("Veuillez sélectionner un client et une entreprise.");
+                alert.showAndWait();
+                return;
+            }
             PrestationDAO dao = new PrestationDAO();
-            dao.ajouterPrestation(type, date, heureDebut, heureFin, classe, module, description, tjm, entreprise, client, tarifHoraire, nbJours);
-
+            dao.ajouterPrestation(type, date, heureDebut, heureFin, classe, module, description, tjm, entreprise, client.getNom(), tarifHoraire, nbJours);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Succès");
             alert.setHeaderText(null);
@@ -99,6 +154,8 @@ public class PrestationFormController {
             javafx.stage.Stage stage = (javafx.stage.Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.setTitle("Menu Principal - Gestion de Factures");
+            stage.setFullScreen(true);
+            stage.setFullScreenExitHint("");
         } catch (Exception ex) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Erreur");
